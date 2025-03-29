@@ -13,9 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: user
     steps:
-      - name: 🔀 random delay 0-300 seconds
-        run: sleep $((RANDOM % 301))
-
+      
       - name: 🔌 Check out code
         uses: actions/checkout@main
 
@@ -53,7 +51,7 @@ jobs:
         uses: nick-fields/retry@master
         with:
           timeout_minutes: 30
-          max_attempts: 5
+          max_attempts: 3
           command: npm start
       
       - name: 📹 Save cached Cookie
